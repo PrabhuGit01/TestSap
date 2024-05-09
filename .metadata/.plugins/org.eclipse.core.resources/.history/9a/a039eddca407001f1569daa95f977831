@@ -1,0 +1,37 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class HomePage {
+
+	WebDriver driver;
+	By widgetsAccordianMenu = By.xpath("//*[@id='sidebar']/aside/*[text()='Widgets']/../ul/li//*[text()='Accordion']");
+	By widgetsButton = By.xpath("//*[@id='sidebar']/aside/*[text()='Widgets']/../ul/li//*[text()='Button']");
+	By accordianSectionMenu = By.xpath("//*[@id='accordion']/h3[text()='Section 2']");
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	// Defining all the user actions (Methods)
+
+	// This method is to click sectionMenu
+	public void clickSectionMenu() {
+		this.driver.findElement(accordianSectionMenu).click();
+	}
+
+	// This method is to click on Accordian Button
+	public void clickAccordianMenu() {
+		this.driver.findElement(widgetsAccordianMenu).click();
+	}
+	
+	// This method is to click on Accordian Button
+		public void clickButtonInMenu() {
+			this.driver.findElement(widgetsButton).click();
+		}
+}

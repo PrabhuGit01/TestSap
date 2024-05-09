@@ -1,0 +1,8 @@
+Feature: As a tester
+when menu is clicked
+then verify all submenu accordian and clicks
+
+  Scenario: As a tester I want to test Menu accordian
+    When Open browser
+    And I click accordian
+    Then I click button in widgets Menu

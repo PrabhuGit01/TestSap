@@ -1,0 +1,101 @@
+package StepDefinition;
+
+import org.openqa.selenium.WebDriver;
+import com.google.common.base.Function;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.*;
+import pages.HomePage;
+
+public class StepDefinitions {
+	WebDriver driver;
+	
+
+	@Given("an example scenario")
+	public void anExampleScenario() {
+	}
+
+	@When("all step definitions are implemented")
+	public void allStepDefinitionsAreImplemented() {
+	}
+
+	@Then("the scenario passes")
+	public void theScenarioPasses() {
+	}
+
+	@Then("I close browser")
+	public void closeBrowser() {
+		driver.close();
+	}
+
+	@Given("Open browser")
+	public void openBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pm82\\Downloads\\Chrome\\chromedriver.exe");
+		driver = new ChromeDriver(options);
+		HomePage homePage = new HomePage(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		String url = "https://jqueryui.com";
+		driver.get(url);
+		driver.manage().window().maximize();
+//		WebElement accordian = driver.findElement(
+//				By.xpath("//*[@id=\"sidebar\"]/aside/*[text()='Widgets']/../ul/li//*[text()='Accordion']"));
+//		accordian.click();
+//
+//		String accordian_section_element = new String("//*[@id='accordion']/h3[text()='Section 2']");
+//		WebElement accordian_DF_S2 = driver.findElement(By.xpath(accordian_section_element));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(accordian_section_element)));
+//		accordian_DF_S2.clear();
+
+		// if(wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\\\"sidebar\\\"]/aside/*[text()='Widgets']/../ul/li//*[text()='Accordion']\")))==null)
+
+//      	  
+//      	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//
+//      	  
+//      	  WebElement DefaultFunctionality_section2 = driver.findElement(By.xpath("//*[@id=\"ui-id-3\"]/span"));
+//      	  DefaultFunctionality_section2.click();
+//      	  
+//      	  WebElement DefaultFunctionality_section3 = driver.findElement(By.xpath("//*[@id=\"ui-id-5\"]"));
+//      	  DefaultFunctionality_section3.click();
+//      	
+//      	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//      	
+//      	  DefaultFunctionality_section3.click();
+//      	
+////      	WebElement collapsecontent = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/ul/li[2]"));
+////      	collapsecontent.click();
+////      	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException ie) {
+		}
+
+	}
+
+	@Given("I click accordian")
+	public void clickAccordian() {
+
+		homePage.clickAccordianMenu();
+		homePage.clickSectionMenu();
+
+	}
+	
+	@AfterStep
+	public void doSomethingAfterStep(Scenario scenario){
+		
+	}
+
+}

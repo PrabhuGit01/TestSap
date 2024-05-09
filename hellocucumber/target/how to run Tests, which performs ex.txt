@@ -1,0 +1,7 @@
+how to run Tests, which performs execution for daily run at particular time, and How to generate reports in mail daily
+
+
+Step1) Install GIT
+
+Step2) Install JENKINS
+

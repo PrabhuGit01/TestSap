@@ -1,0 +1,40 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+
+  
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.support.FindBy; 
+import org.openqa.selenium.support.How; 
+
+public class HomePage { 
+	  
+    WebDriver driver; 
+  
+    public HomePage(WebDriver driver) { 
+        this.driver = driver; 
+    } 
+  
+    // Using FindBy for locating elements 
+    @FindBy(how = How.XPATH, using = "//*[@id='sidebar']/aside/*[text()='Widgets']/../ul/li//*[text()='Accordion']") 
+    WebElement accordianMenu; 
+  
+    @FindBy(how = How.XPATH, using = "//*[@id='accordion']/h3[text()='Section 2']")
+    WebElement sectionMenu;
+
+  
+    // Defining all the user actions (Methods) 
+
+  
+     // This method is to set Password in the password text box 
+    public void clickSectionMenu() { 
+    	sectionMenu.click();
+        } 
+      // This method is to click on Next Button 
+    public void clickAccordianMenu() { 
+    	accordianMenu.click(); 
+    } 
+} 

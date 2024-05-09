@@ -1,0 +1,22 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class HomePage {
+
+	WebDriver ldriver;
+
+	public HomePage(WebDriver rDriver)
+	{
+		ldriver=rDriver;
+
+		PageFactory.initElements(rDriver, this);
+	}
+	
+	
+	//@FindBy(xpath = "\"//*[@id=\\\"sidebar\\\"]/aside/*[text()='Widgets']/../ul/li//*[text()='Accordion']\"");
+	
+
+}
