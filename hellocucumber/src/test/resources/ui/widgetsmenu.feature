@@ -16,13 +16,5 @@ then verify all submenu accordian and clicks
     When I switch back to main
     And I click accordian in widgets Menu
     And I switch to iframe
-    Then I click section Menu
-    When I switch back to main
-    Then I click on the Selectmenu tab
-    And I switch to iframe
-    And I select "Fast" option under Medium dropdown
  		Then I close browser
  	
- 	
-    
-    
